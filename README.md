@@ -3,4 +3,4 @@
 Includes:
 
 * Decorators
-* 
+* KAT + Brzozowski derivatives 

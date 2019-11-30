@@ -9,6 +9,7 @@ class Policy(object):
     _policy_expr: BaseExpression
 
     def __init__(self, initial_policy):
+        self.atoms = dict()
         if isinstance(initial_policy, str):
             self._policy_expr = PolicyParser.parse_it(initial_policy)
         elif isinstance(initial_policy, list):
@@ -17,6 +18,7 @@ class Policy(object):
             self._policy_expr = deepcopy(initial_policy)
         elif isinstance(initial_policy, Policy):
             self._policy_expr = deepcopy(initial_policy._policy_expr)
+            self.atoms = initial_policy.atoms
         else:
             raise ValueError(f'You need to supply either a string or object of '
                              f'class BaseExpression. '
@@ -42,7 +44,7 @@ class Policy(object):
         Takes a derivative of the current policy expression using D-step
 
         """
-        new_policy_expr = self._policy_expr.d_step(command, atoms).simplify()
+        new_policy_expr = self._policy_expr.d_step(command, self.atoms).simplify()
         if update:
             self._policy_expr = new_policy_expr
 
@@ -54,7 +56,7 @@ class Policy(object):
         then the policy has succeeded, otherwise the policy check has failed.
         :return:
         """
-        result = self._policy_expr.e_step(atoms)
+        result = self._policy_expr.e_step(self.atoms)
         if result is Constants.ONE:
             return True
         else:

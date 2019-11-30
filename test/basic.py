@@ -11,7 +11,7 @@ class MyTestCase(unittest.TestCase):
         dpp = DataPolicyPair('ANYF*')
         dpp._data = 8
         res = test(data=dpp)
-        self.assertEqual(res, 5)
+        self.assertEqual(res._data, 5)
 
 
 if __name__ == '__main__':

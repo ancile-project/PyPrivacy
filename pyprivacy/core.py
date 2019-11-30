@@ -4,7 +4,6 @@ from RestrictedPython.Eval import default_guarded_getitem
 import traceback
 import redis
 from collections import namedtuple
-from config.loader import REDIS_CONFIG
 import logging
 from pyprivacy.context_building import assemble_locals
 
@@ -15,7 +14,6 @@ UserInfoBundle = namedtuple("UserInfoBundle", ['username', 'policies',
 
 
 def execute(users_secrets, program, app_id=None, app_module=None):
-    r = redis.Redis(**REDIS_CONFIG)
     json_output = dict()
     # object to interact with the program
     result = Result()
@@ -24,10 +22,10 @@ def execute(users_secrets, program, app_id=None, app_module=None):
              '_getitem_': default_guarded_getitem
              }
 
-    lcls = assemble_locals(storage=storage, result=result,
+    lcls = assemble_locals(result=result,
                            users_secrets=users_secrets,
                            app_id=app_id,
-                           app_module=app_module)
+                           debug=True)
     try:
         c_program = compile_restricted_exec(program)
         exec(c_program, glbls, lcls)

@@ -1,8 +1,8 @@
 from __future__ import annotations
 from copy import deepcopy
-from ancile.core.primitives.policy_helpers.expressions.special.command import Command
-from ancile.core.primitives.policy_helpers.policy_parser import PolicyParser
-from ancile.core.primitives.policy_helpers.expressions import *
+from pyprivacy.primitives.policy_helpers.expressions.special.command import Command
+from pyprivacy.primitives.policy_helpers.policy_parser import PolicyParser
+from pyprivacy.primitives.policy_helpers.expressions import *
 
 
 class Policy(object):

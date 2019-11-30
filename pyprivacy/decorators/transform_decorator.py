@@ -1,9 +1,10 @@
 import copy
-from ancile.core.decorators import *
+from pyprivacy.decorators import *
 import logging
 
-from ancile.core.primitives import DataPolicyPair
-from ancile.utils.errors import AncileException
+from pyprivacy.primitives import DataPolicyPair
+
+from pyprivacy.utils.errors import AncileException
 
 logger = logging.getLogger(__name__)
 

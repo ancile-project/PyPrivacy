@@ -1,7 +1,7 @@
-from ancile.core.user_secrets import UserSecrets
-from ancile.core.primitives.data_policy_pair import DataPolicyPair
-from ancile.core.primitives.policy_helpers.private_data import PrivateData
-from ancile.core.primitives.collection import Collection
+from pyprivacy.user_secrets import UserSecrets
+from pyprivacy.primitives.data_policy_pair import DataPolicyPair
+from pyprivacy.primitives.policy_helpers.private_data import PrivateData
+from pyprivacy.primitives.collection import Collection
 import pprint
 from config.loader import configs
 from ancile.core.decorators import TransformDecorator

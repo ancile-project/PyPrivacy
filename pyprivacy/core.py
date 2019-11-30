@@ -1,14 +1,12 @@
-from ancile.core.primitives.result import Result
-from RestrictedPython import safe_builtins
+from pyprivacy.primitives.result import Result
+from RestrictedPython import safe_builtins, compile_restricted_exec
 from RestrictedPython.Eval import default_guarded_getitem
 import traceback
 import redis
 from collections import namedtuple
 from config.loader import REDIS_CONFIG
 import logging
-from ancile.core.context_building import assemble_locals
-from ancile.core.advanced.caching import retrieve_compiled
-from ancile.core.advanced.storage import Storage
+from pyprivacy.context_building import assemble_locals
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +16,6 @@ UserInfoBundle = namedtuple("UserInfoBundle", ['username', 'policies',
 
 def execute(users_secrets, program, app_id=None, app_module=None):
     r = redis.Redis(**REDIS_CONFIG)
-    storage = Storage(redis_conneciton=r)
     json_output = dict()
     # object to interact with the program
     result = Result()
@@ -32,7 +29,7 @@ def execute(users_secrets, program, app_id=None, app_module=None):
                            app_id=app_id,
                            app_module=app_module)
     try:
-        c_program = retrieve_compiled(program, r)
+        c_program = compile_restricted_exec(program)
         exec(c_program, glbls, lcls)
 
     except:

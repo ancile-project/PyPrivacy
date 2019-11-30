@@ -2,10 +2,10 @@ from sly import Parser
 import operator
 
 from utils.errors import ParseError
-from core.primitives.policy_helpers.private_data import PrivateData
-from core.primitives.policy_helpers.policy_lexer import *
-from core.primitives.policy_helpers.params import ParamCell, RangeCell, SetCell, RangeType
-from core.primitives.policy_helpers.expressions import *
+from pyprivacy.primitives.policy_helpers.private_data import PrivateData
+from pyprivacy.primitives.policy_helpers.policy_lexer import *
+from pyprivacy.primitives.policy_helpers.params import ParamCell, RangeCell, SetCell, RangeType
+from pyprivacy.primitives.policy_helpers.expressions import *
 
 
 class PolicyParser(Parser):

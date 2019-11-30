@@ -52,7 +52,7 @@ class BaseDecorator(ABC):
 
     @staticmethod
     def check_data(dp_pair):
-        from ancile.core.primitives import DataPolicyPair
+        from pyprivacy.primitives import DataPolicyPair
 
         if not isinstance(dp_pair, DataPolicyPair):
             raise ValueError(f"You need to provide a Data object. "
@@ -71,7 +71,7 @@ class BaseDecorator(ABC):
         Allow calling a method if none of the parameters are DataPolicyPair
         (assuming they all have `ANYF*` policy). Useful for library integrations.
         """
-        from ancile.core.primitives import DataPolicyPair
+        from pyprivacy.primitives import DataPolicyPair
 
         for arg in args:
             if isinstance(arg, DataPolicyPair):

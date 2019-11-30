@@ -2,7 +2,4 @@ from pyprivacy.decorators.base_decorator import BaseDecorator
 from pyprivacy.decorators.external_decorator import ExternalDecorator
 from pyprivacy.decorators.transform_decorator import TransformDecorator
 from pyprivacy.decorators.use_decorator import UseDecorator
-from pyprivacy.decorators.advanced.aggregate_decorator import AggregateDecorator
 from pyprivacy.decorators.advanced.comparison_decorator import ComparisonDecorator
-from pyprivacy.decorators.advanced.collection.reduction_decorator import ReductionDecorator
-from pyprivacy.decorators.advanced.collection.filter_decorator import FilterDecorator

@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 import wrapt
 
-from ancile.core.primitives.policy_helpers.expressions.special.command import Command
+from pyprivacy.primitives.policy_helpers.expressions.special.command import Command
 
 
 class BaseDecorator(ABC):

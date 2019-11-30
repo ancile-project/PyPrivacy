@@ -2,8 +2,8 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from functools import lru_cache
 
-from ancile.core.primitives.policy_helpers.expressions.special.command import Command
-from ancile.core.primitives.policy_helpers.expressions import *
+from pyprivacy.primitives.policy_helpers.expressions.special.command import Command
+from pyprivacy.primitives.policy_helpers.expressions import *
 
 
 class BaseExpression(ABC):

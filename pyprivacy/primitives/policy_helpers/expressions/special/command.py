@@ -1,7 +1,7 @@
 import traceback
 import logging
 import inspect
-from ancile.utils.errors import AncileException
+from pyprivacy.utils.errors import AncileException
 logger = logging.getLogger(__name__)
 
 

@@ -1,4 +1,4 @@
-from ancile.core.decorators import *
+from pyprivacy.decorators import *
 import logging
 import copy
 logger = logging.getLogger(__name__)

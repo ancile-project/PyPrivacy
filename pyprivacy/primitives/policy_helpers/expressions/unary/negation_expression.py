@@ -1,4 +1,4 @@
-from ancile.core.primitives.policy_helpers.expressions import *
+from pyprivacy.primitives.policy_helpers.expressions import *
 
 
 class NegationExpression(UnaryExpression):

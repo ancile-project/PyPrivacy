@@ -1,7 +1,7 @@
 import logging
 import inspect
-from ancile.core.decorators import *
-from ancile.core.user_secrets import UserSecrets
+from pyprivacy.decorators import *
+from pyprivacy.user_secrets import UserSecrets
 
 logger = logging.getLogger(__name__)
 

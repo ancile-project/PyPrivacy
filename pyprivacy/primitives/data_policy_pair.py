@@ -1,10 +1,10 @@
 from __future__ import annotations
 from copy import copy, deepcopy
 
-from ancile.core.primitives import Policy, Command
-from ancile.utils.errors import AncileException, PolicyError
-from ancile.core.primitives.policy_helpers.private_data import PrivateData
-import ancile.utils.time as ancile_web_time
+from pyprivacy.primitives import Policy, Command
+from pyprivacy.utils.errors import AncileException, PolicyError
+from pyprivacy.primitives.policy_helpers.private_data import PrivateData
+import pyprivacy.utils.time as ancile_web_time
 import logging
 import uuid
 logger = logging.getLogger(__name__)

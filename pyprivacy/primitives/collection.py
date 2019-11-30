@@ -1,9 +1,9 @@
-from ancile.core.primitives.policy_helpers.expressions import IntersectExpression
-from ancile.core.primitives.policy_helpers.policy_parser import PolicyParser
-from ancile.utils.errors import PolicyError, AncileException
-import ancile.utils.time as ancile_web_time
-from ancile.core.primitives import *
+from pyprivacy.primitives.policy_helpers.expressions import IntersectExpression
+from pyprivacy.primitives.policy_helpers.policy_parser import PolicyParser
+from pyprivacy.utils.errors import PolicyError, AncileException
+from pyprivacy.primitives import *
 import logging
+import pyprivacy.utils.time as ancile_web_time
 logger = logging.getLogger(__name__)
 
 
@@ -128,8 +128,8 @@ class Collection(object):
         new_data_points = list()
 
         for dpp in self._data_points:
-            peek_next_policy = dpp._policy.d_step('filter_keep', atoms)
-            if peek_next_policy.d_step(command, atoms):
+            peek_next_policy = dpp._policy.d_step('filter_keep', None)
+            if peek_next_policy.d_step(command, None):
                 dpp._advance_policy_error('filter_keep')
                 new_data_points.append(dpp)
             else:

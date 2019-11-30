@@ -1,6 +1,6 @@
 import logging
-from ancile.core.decorators import *
-from ancile.core.primitives import *
+from pyprivacy.decorators import *
+from pyprivacy.primitives import *
 
 logger = logging.getLogger(__name__)
 

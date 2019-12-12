@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",
     author="Eugene Bagdasaryan",
     author_email="eugene@cs.cornell.edu",
-    description="A Python framework to implement command-level privacy",
+    description="A Python framework to implement command-level privacy for Machine Learning.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ancile-project/pyprivacy/",

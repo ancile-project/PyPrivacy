@@ -1,7 +1,7 @@
 from sly import Parser
 import operator
 
-from utils.errors import ParseError
+from pyprivacy.utils.errors import ParseError
 from pyprivacy.primitives.policy_helpers.private_data import PrivateData
 from pyprivacy.primitives.policy_helpers.policy_lexer import *
 from pyprivacy.primitives.policy_helpers.params import ParamCell, RangeCell, SetCell, RangeType

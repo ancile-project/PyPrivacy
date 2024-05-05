@@ -49,7 +49,7 @@ class IntersectExpression(BinaryExpression):
 
         """
         # resolve circular dependency
-        from ancile.core.primitives.policy_helpers.expressions import StarExpression
+        from pyprivacy.primitives.policy_helpers.expressions import StarExpression
 
         self.l_expr = self.l_expr.simplify()
         self.r_expr = self.r_expr.simplify()
